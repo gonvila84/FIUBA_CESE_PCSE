@@ -18,6 +18,7 @@ El driver para la plataforma STM32F429ZI se encarga de:
 1. Inicializar el *hardware* y los *handlers* I2C.
 2. Proveer las funciones necesarias para obtener la temperatura del sensor y expresarla en grados Celsius o Fahrenheit.
 3. Unifica la gestión de errores de manera de mejorar su capacidad de ser portado a otras plataformas.
+4. Divide la implementacion en capas para favorecer la portabilidad a otras plataformas.
 
 Documentación:
 ==============
