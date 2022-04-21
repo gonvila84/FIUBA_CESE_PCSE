@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Driver para el sensor de temperatura TEMP102 (STM32-F429ZI): Referencia del Archivo Core/Src/Driver_TMP102_Port.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Driver para el sensor de temperatura TEMP102 (STM32-F429ZI)
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Trabajo práctico final de la materia Protocolos De Comunicación En Sistemas Embebidos (FIUBA-CESE) del alumno Gonzalo Vila</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">typedefs</a> &#124;
+<a href="#enum-members">Enumeraciones</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo Driver_TMP102_Port.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="Driver__TMP102__Port_8h_source.html">Driver_TMP102_Port.h</a>&quot;</code><br />
+<code>#include &quot;stm32f4xx_hal.h&quot;</code><br />
+<code>#include &quot;stm32f4xx_hal_i2c.h&quot;</code><br />
+<code>#include &quot;stm32f4xx_hal_i2c_ex.h&quot;</code><br />
+</div>
+<p><a href="Driver__TMP102__Port_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+typedefs</h2></td></tr>
+<tr class="memitem:a77a88e25bf0c84fa6f2a60300baf754f"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="Driver__TMP102__Port_8c.html#aa8422cb221b465ca155e1581eba8bffb">commDirection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102__Port_8c.html#a77a88e25bf0c84fa6f2a60300baf754f">commDirection_t</a></td></tr>
+<tr class="separator:a77a88e25bf0c84fa6f2a60300baf754f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:aa8422cb221b465ca155e1581eba8bffb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102__Port_8c.html#aa8422cb221b465ca155e1581eba8bffb">commDirection</a> { <a class="el" href="Driver__TMP102__Port_8c.html#aa8422cb221b465ca155e1581eba8bffba67be7a5f47004345047b32fff72a2230">SEND</a>, 
+<a class="el" href="Driver__TMP102__Port_8c.html#aa8422cb221b465ca155e1581eba8bffba563f8ed00490ea22ea2605d9571dada8">RECEIVE</a>
+ }</td></tr>
+<tr class="separator:aa8422cb221b465ca155e1581eba8bffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a64e19c014c325fcb94b43f4476073558"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102__Port_8c.html#a64e19c014c325fcb94b43f4476073558">TMP102_Port_Convert_Error_To_Upper_Layer</a> (HAL_StatusTypeDef stmHalErrorType, <a class="el" href="Driver__TMP102__Port_8c.html#a77a88e25bf0c84fa6f2a60300baf754f">commDirection_t</a> <a class="el" href="Driver__TMP102__Port_8c.html#aa8422cb221b465ca155e1581eba8bffb">commDirection</a>)</td></tr>
+<tr class="memdesc:a64e19c014c325fcb94b43f4476073558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de compatibilidad entre los errores de STM y otros fabricantes.  <a href="Driver__TMP102__Port_8c.html#a64e19c014c325fcb94b43f4476073558">Más...</a><br /></td></tr>
+<tr class="separator:a64e19c014c325fcb94b43f4476073558"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3288fa1f0754f62b2a2c4cbaf0e64dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">tmp102configResult_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102__Port_8c.html#aa3288fa1f0754f62b2a2c4cbaf0e64dc">TMP102_Port_I2C_Init_Handler</a> (void)</td></tr>
+<tr class="memdesc:aa3288fa1f0754f62b2a2c4cbaf0e64dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función "específica" de inicialización del driver para la plataforma STM32-F429ZI Realiza las operaciones específicas para la librería STM.  <a href="Driver__TMP102__Port_8c.html#aa3288fa1f0754f62b2a2c4cbaf0e64dc">Más...</a><br /></td></tr>
+<tr class="separator:aa3288fa1f0754f62b2a2c4cbaf0e64dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2b369c2f25645c838e432066d1278f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102__Port_8c.html#ae2b369c2f25645c838e432066d1278f2">TMP102_Port_I2C_Send</a> (<a class="el" href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">tmp102address_t</a> tmp102Address, <a class="el" href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">tmp102transmissionPayload_t</a> *payload, const <a class="el" href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">tmp102transmissionTimeout_t</a> timeout)</td></tr>
+<tr class="memdesc:ae2b369c2f25645c838e432066d1278f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función "específica" para la transmisión I2C en STM32-F429ZI Realiza las operaciones de transmisión I2C específicas para la librería STM.  <a href="Driver__TMP102__Port_8c.html#ae2b369c2f25645c838e432066d1278f2">Más...</a><br /></td></tr>
+<tr class="separator:ae2b369c2f25645c838e432066d1278f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea0c3614edd078d085f47dd1389e86e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102__Port_8c.html#aaea0c3614edd078d085f47dd1389e86e">TMP102_Port_I2C_Receive</a> (<a class="el" href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">tmp102address_t</a> tmp102Address, <a class="el" href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">tmp102transmissionPayload_t</a> *payload, const <a class="el" href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">tmp102transmissionTimeout_t</a> timeout)</td></tr>
+<tr class="memdesc:aaea0c3614edd078d085f47dd1389e86e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función "específica" para la recepción I2C en STM32-F429ZI Realiza las operaciones de recepción I2C específicas para la librería STM.  <a href="Driver__TMP102__Port_8c.html#aaea0c3614edd078d085f47dd1389e86e">Más...</a><br /></td></tr>
+<tr class="separator:aaea0c3614edd078d085f47dd1389e86e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a394223144795434a83cb2bb39fb8fbea"><td class="memItemLeft" align="right" valign="top">I2C_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102__Port_8c.html#a394223144795434a83cb2bb39fb8fbea">i2cHandler</a></td></tr>
+<tr class="separator:a394223144795434a83cb2bb39fb8fbea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de los 'typedefs'</h2>
+<a id="a77a88e25bf0c84fa6f2a60300baf754f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77a88e25bf0c84fa6f2a60300baf754f">&#9670;&nbsp;</a></span>commDirection_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="Driver__TMP102__Port_8c.html#aa8422cb221b465ca155e1581eba8bffb">commDirection</a> <a class="el" href="Driver__TMP102__Port_8c.html#a77a88e25bf0c84fa6f2a60300baf754f">commDirection_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102__Port_8c_source.html#l00010">10</a> del archivo <a class="el" href="Driver__TMP102__Port_8c_source.html">Driver_TMP102_Port.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las enumeraciones</h2>
+<a id="aa8422cb221b465ca155e1581eba8bffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8422cb221b465ca155e1581eba8bffb">&#9670;&nbsp;</a></span>commDirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="Driver__TMP102__Port_8c.html#aa8422cb221b465ca155e1581eba8bffb">commDirection</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="aa8422cb221b465ca155e1581eba8bffba67be7a5f47004345047b32fff72a2230"></a>SEND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa8422cb221b465ca155e1581eba8bffba563f8ed00490ea22ea2605d9571dada8"></a>RECEIVE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102__Port_8c_source.html#l00008">8</a> del archivo <a class="el" href="Driver__TMP102__Port_8c_source.html">Driver_TMP102_Port.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a64e19c014c325fcb94b43f4476073558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64e19c014c325fcb94b43f4476073558">&#9670;&nbsp;</a></span>TMP102_Port_Convert_Error_To_Upper_Layer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a> TMP102_Port_Convert_Error_To_Upper_Layer </td>
+          <td>(</td>
+          <td class="paramtype">HAL_StatusTypeDef&#160;</td>
+          <td class="paramname"><em>stmHalErrorType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Driver__TMP102__Port_8c.html#a77a88e25bf0c84fa6f2a60300baf754f">commDirection_t</a>&#160;</td>
+          <td class="paramname"><em>commDirection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función de compatibilidad entre los errores de STM y otros fabricantes. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">HAL_StatusTypeDef</td><td>(Errores STM) </td></tr>
+    <tr><td class="paramname">commDirection_t</td><td>(Dirección de la transmisión Transmisión/Recepción) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>tmp102commResult_t </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102__Port_8c_source.html#l00083">83</a> del archivo <a class="el" href="Driver__TMP102__Port_8c_source.html">Driver_TMP102_Port.c</a>.</p>
+
+</div>
+</div>
+<a id="aa3288fa1f0754f62b2a2c4cbaf0e64dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3288fa1f0754f62b2a2c4cbaf0e64dc">&#9670;&nbsp;</a></span>TMP102_Port_I2C_Init_Handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">tmp102configResult_t</a> TMP102_Port_I2C_Init_Handler </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función "específica" de inicialización del driver para la plataforma STM32-F429ZI Realiza las operaciones específicas para la librería STM. </p>
+<p>Función de inicialización del handler I2C.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>tmp102configResult_t </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102__Port_8c_source.html#l00019">19</a> del archivo <a class="el" href="Driver__TMP102__Port_8c_source.html">Driver_TMP102_Port.c</a>.</p>
+
+</div>
+</div>
+<a id="aaea0c3614edd078d085f47dd1389e86e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea0c3614edd078d085f47dd1389e86e">&#9670;&nbsp;</a></span>TMP102_Port_I2C_Receive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a> TMP102_Port_I2C_Receive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">tmp102address_t</a>&#160;</td>
+          <td class="paramname"><em>tmp102Address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">tmp102transmissionPayload_t</a> *&#160;</td>
+          <td class="paramname"><em>payload</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">tmp102transmissionTimeout_t</a>&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función "específica" para la recepción I2C en STM32-F429ZI Realiza las operaciones de recepción I2C específicas para la librería STM. </p>
+<p>Función de recepción I2C.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tmp102address_t</td><td>(Direccion I2C del sensor) </td></tr>
+    <tr><td class="paramname">tmp102transmissionPayload_t</td><td>* (Payload a enviar) </td></tr>
+    <tr><td class="paramname">const</td><td>tmp102transmissionTimeout_t (Timeout para la transacción) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>tmp102commResult_t </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102__Port_8c_source.html#l00070">70</a> del archivo <a class="el" href="Driver__TMP102__Port_8c_source.html">Driver_TMP102_Port.c</a>.</p>
+
+</div>
+</div>
+<a id="ae2b369c2f25645c838e432066d1278f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2b369c2f25645c838e432066d1278f2">&#9670;&nbsp;</a></span>TMP102_Port_I2C_Send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a> TMP102_Port_I2C_Send </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">tmp102address_t</a>&#160;</td>
+          <td class="paramname"><em>tmp102Address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">tmp102transmissionPayload_t</a> *&#160;</td>
+          <td class="paramname"><em>payload</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">tmp102transmissionTimeout_t</a>&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función "específica" para la transmisión I2C en STM32-F429ZI Realiza las operaciones de transmisión I2C específicas para la librería STM. </p>
+<p>Función de envio I2C.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tmp102address_t</td><td>(Direccion I2C del sensor) </td></tr>
+    <tr><td class="paramname">tmp102transmissionPayload_t</td><td>* (Payload a enviar) </td></tr>
+    <tr><td class="paramname">const</td><td>tmp102transmissionTimeout_t (Timeout para la transacción) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>tmp102commResult_t </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102__Port_8c_source.html#l00055">55</a> del archivo <a class="el" href="Driver__TMP102__Port_8c_source.html">Driver_TMP102_Port.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a id="a394223144795434a83cb2bb39fb8fbea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a394223144795434a83cb2bb39fb8fbea">&#9670;&nbsp;</a></span>i2cHandler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">I2C_HandleTypeDef i2cHandler</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102__Port_8c_source.html#l00006">6</a> del archivo <a class="el" href="Driver__TMP102__Port_8c_source.html">Driver_TMP102_Port.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

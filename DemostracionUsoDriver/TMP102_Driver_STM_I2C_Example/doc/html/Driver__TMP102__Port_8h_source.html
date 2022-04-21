@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Driver para el sensor de temperatura TEMP102 (STM32-F429ZI): Fichero Fuente Core/Inc/Driver_TMP102_Port.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Driver para el sensor de temperatura TEMP102 (STM32-F429ZI)
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Trabajo práctico final de la materia Protocolos De Comunicación En Sistemas Embebidos (FIUBA-CESE) del alumno Gonzalo Vila</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Driver_TMP102_Port.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Driver__TMP102__Port_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INC_DRIVER_TMP102_PORT_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define INC_DRIVER_TMP102_PORT_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Driver__TMP102_8h.html">Driver_TMP102.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<a class="code" href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a>  <a class="code" href="Driver__TMP102__Port_8h.html#ae2b369c2f25645c838e432066d1278f2">TMP102_Port_I2C_Send</a>    (<a class="code" href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">tmp102address_t</a> tmp102Address,<a class="code" href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">tmp102transmissionPayload_t</a> * payload,<span class="keyword">const</span> <a class="code" href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">tmp102transmissionTimeout_t</a> timeout);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a>  <a class="code" href="Driver__TMP102__Port_8h.html#aaea0c3614edd078d085f47dd1389e86e">TMP102_Port_I2C_Receive</a> (<a class="code" href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">tmp102address_t</a> tmp102Address,<a class="code" href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">tmp102transmissionPayload_t</a> * payload,<span class="keyword">const</span> <a class="code" href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">tmp102transmissionTimeout_t</a> timeout);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">tmp102configResult_t</a> <a class="code" href="Driver__TMP102__Port_8h.html#aa3288fa1f0754f62b2a2c4cbaf0e64dc">TMP102_Port_I2C_Init_Handler</a> (<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aDriver__TMP102_8h_html_a433b94d5120047d2f6a5153102fe283b"><div class="ttname"><a href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">tmp102configResult_t</a></div><div class="ttdeci">enum configResult tmp102configResult_t</div><div class="ttdoc">Typedef para la enumeración configResult.&amp;#160;.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00047">Driver_TMP102.h:47</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a11e941786b472cb62698662b6d499222"><div class="ttname"><a href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">tmp102transmissionPayload_t</a></div><div class="ttdeci">uint8_t tmp102transmissionPayload_t</div><div class="ttdoc">Tipo de datos utilizado para enviar/recibir el payload de una transacción I2C.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00082">Driver_TMP102.h:82</a></div></div>
+<div class="ttc" id="aDriver__TMP102__Port_8h_html_aa3288fa1f0754f62b2a2c4cbaf0e64dc"><div class="ttname"><a href="Driver__TMP102__Port_8h.html#aa3288fa1f0754f62b2a2c4cbaf0e64dc">TMP102_Port_I2C_Init_Handler</a></div><div class="ttdeci">tmp102configResult_t TMP102_Port_I2C_Init_Handler(void)</div><div class="ttdoc">Función de inicialización del handler I2C.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102__Port_8c_source.html#l00019">Driver_TMP102_Port.c:19</a></div></div>
+<div class="ttc" id="aDriver__TMP102__Port_8h_html_aaea0c3614edd078d085f47dd1389e86e"><div class="ttname"><a href="Driver__TMP102__Port_8h.html#aaea0c3614edd078d085f47dd1389e86e">TMP102_Port_I2C_Receive</a></div><div class="ttdeci">tmp102commResult_t TMP102_Port_I2C_Receive(tmp102address_t tmp102Address, tmp102transmissionPayload_t *payload, const tmp102transmissionTimeout_t timeout)</div><div class="ttdoc">Función de recepción I2C.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102__Port_8c_source.html#l00070">Driver_TMP102_Port.c:70</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html"><div class="ttname"><a href="Driver__TMP102_8h.html">Driver_TMP102.h</a></div></div>
+<div class="ttc" id="aDriver__TMP102__Port_8h_html_ae2b369c2f25645c838e432066d1278f2"><div class="ttname"><a href="Driver__TMP102__Port_8h.html#ae2b369c2f25645c838e432066d1278f2">TMP102_Port_I2C_Send</a></div><div class="ttdeci">tmp102commResult_t TMP102_Port_I2C_Send(tmp102address_t tmp102Address, tmp102transmissionPayload_t *payload, const tmp102transmissionTimeout_t timeout)</div><div class="ttdoc">Función de envio I2C.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102__Port_8c_source.html#l00055">Driver_TMP102_Port.c:55</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a048d1b6ff1382c2d33dd626e730c1195"><div class="ttname"><a href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">tmp102address_t</a></div><div class="ttdeci">uint16_t tmp102address_t</div><div class="ttdoc">Tipo de datos utilizado para almacenar la dirección del I2C slave.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00072">Driver_TMP102.h:72</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a7a2d8292ff5fc57e1685155c464c6df2"><div class="ttname"><a href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">tmp102transmissionTimeout_t</a></div><div class="ttdeci">uint32_t tmp102transmissionTimeout_t</div><div class="ttdoc">Tipo de datos utilizado para definir timeouts en las transacciones I2C.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00077">Driver_TMP102.h:77</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_abeaddd2230fb2cf2349d4600304e3f84"><div class="ttname"><a href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a></div><div class="ttdeci">enum communicationResult tmp102commResult_t</div><div class="ttdoc">Typedef para la enumeración communicationResult.&amp;#160;.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00052">Driver_TMP102.h:52</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

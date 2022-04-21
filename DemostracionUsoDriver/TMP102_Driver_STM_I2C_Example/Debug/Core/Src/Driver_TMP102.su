@@ -1,0 +1,6 @@
+../Core/Src/Driver_TMP102.c:26:22:TMP102_InitDriver	24	static
+../Core/Src/Driver_TMP102.c:45:21:TMP102_GetTemperatureMeasureUnit	4	static
+../Core/Src/Driver_TMP102.c:54:6:TMP102_SetTemperatureMeasureUnit	16	static
+../Core/Src/Driver_TMP102.c:65:19:TMP102_GetTemperature	24	static
+../Core/Src/Driver_TMP102.c:95:21:TMP102_ConvertTemperatureToMeasureUnit	24	static
+../Core/Src/Driver_TMP102.c:120:19:TMP102_TestMeasurement	16	static

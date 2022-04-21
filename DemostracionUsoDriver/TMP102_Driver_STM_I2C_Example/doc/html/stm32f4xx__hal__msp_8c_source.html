@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Driver para el sensor de temperatura TEMP102 (STM32-F429ZI): Fichero Fuente Core/Src/stm32f4xx_hal_msp.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Driver para el sensor de temperatura TEMP102 (STM32-F429ZI)
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Trabajo práctico final de la materia Protocolos De Comunicación En Sistemas Embebidos (FIUBA-CESE) del alumno Gonzalo Vila</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">stm32f4xx_hal_msp.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="stm32f4xx__hal__msp_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* USER CODE BEGIN Header */</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* USER CODE END Header */</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/* Includes ------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/* USER CODE BEGIN Includes */</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/* USER CODE END Includes */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/* Private typedef -----------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/* USER CODE BEGIN TD */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/* USER CODE END TD */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/* Private define ------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/* USER CODE BEGIN Define */</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* USER CODE END Define */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/* Private macro -------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/* USER CODE BEGIN Macro */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/* USER CODE END Macro */</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/* Private variables ---------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/* USER CODE BEGIN PV */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/* USER CODE END PV */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/* Private function prototypes -----------------------------------------------*/</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/* USER CODE BEGIN PFP */</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/* USER CODE END PFP */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/* External functions --------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/* USER CODE BEGIN ExternalFunctions */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/* USER CODE END ExternalFunctions */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/* USER CODE BEGIN 0 */</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/* USER CODE END 0 */</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__msp_8c.html#ae4fb8e66865c87d0ebab74a726a6891f">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__msp_8c.html#ae4fb8e66865c87d0ebab74a726a6891f">HAL_MspInit</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">/* USER CODE BEGIN MspInit 0 */</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">/* USER CODE END MspInit 0 */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  __HAL_RCC_SYSCFG_CLK_ENABLE();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  __HAL_RCC_PWR_CLK_ENABLE();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">/* System interrupt init*/</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">/* USER CODE BEGIN MspInit 1 */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">/* USER CODE END MspInit 1 */</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__msp_8c.html#aa30863492d5c3103e3e8ce8a63dadd07">   85</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__msp_8c.html#aa30863492d5c3103e3e8ce8a63dadd07">HAL_ADC_MspInit</a>(ADC_HandleTypeDef* hadc)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  GPIO_InitTypeDef GPIO_InitStruct = {0};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">if</span>(hadc-&gt;Instance==ADC1)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="comment">/* USER CODE BEGIN ADC1_MspInit 0 */</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">/* USER CODE END ADC1_MspInit 0 */</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">/* Peripheral clock enable */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    __HAL_RCC_ADC1_CLK_ENABLE();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    __HAL_RCC_GPIOA_CLK_ENABLE();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    GPIO_InitStruct.Pin = GPIO_PIN_0;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    HAL_GPIO_Init(GPIOA, &amp;GPIO_InitStruct);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="comment">/* USER CODE BEGIN ADC1_MspInit 1 */</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="comment">/* USER CODE END ADC1_MspInit 1 */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__msp_8c.html#a39b0f8e80268ab3e660ead921ad4b22f">  118</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__msp_8c.html#a39b0f8e80268ab3e660ead921ad4b22f">HAL_ADC_MspDeInit</a>(ADC_HandleTypeDef* hadc)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordflow">if</span>(hadc-&gt;Instance==ADC1)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="comment">/* USER CODE BEGIN ADC1_MspDeInit 0 */</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="comment">/* USER CODE END ADC1_MspDeInit 0 */</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">/* Peripheral clock disable */</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    __HAL_RCC_ADC1_CLK_DISABLE();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_0);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="comment">/* USER CODE BEGIN ADC1_MspDeInit 1 */</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="comment">/* USER CODE END ADC1_MspDeInit 1 */</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__msp_8c.html#a1ffa1e1337d6e52a3b175144a4505ea7">  146</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__msp_8c.html#a1ffa1e1337d6e52a3b175144a4505ea7">HAL_ETH_MspInit</a>(ETH_HandleTypeDef* <a class="code" href="main_8c.html#a3605d86556d96074ff098be46eca2837">heth</a>)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  GPIO_InitTypeDef GPIO_InitStruct = {0};</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="main_8c.html#a3605d86556d96074ff098be46eca2837">heth</a>-&gt;Instance==ETH)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="comment">/* USER CODE BEGIN ETH_MspInit 0 */</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="comment">/* USER CODE END ETH_MspInit 0 */</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">/* Peripheral clock enable */</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    __HAL_RCC_ETH_CLK_ENABLE();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    __HAL_RCC_GPIOC_CLK_ENABLE();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    __HAL_RCC_GPIOA_CLK_ENABLE();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    __HAL_RCC_GPIOB_CLK_ENABLE();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    __HAL_RCC_GPIOG_CLK_ENABLE();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    GPIO_InitStruct.Pin = <a class="code" href="main_8h.html#afa5f3c1b1c190b27bd2d75ebe05f89a5">RMII_MDC_Pin</a>|<a class="code" href="main_8h.html#ab7389bae0ff0d1ac0e52932833daf522">RMII_RXD0_Pin</a>|<a class="code" href="main_8h.html#ae12c799456376a83914b7c4d888fd7ea">RMII_RXD1_Pin</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    GPIO_InitStruct.Alternate = GPIO_AF11_ETH;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    HAL_GPIO_Init(GPIOC, &amp;GPIO_InitStruct);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    GPIO_InitStruct.Pin = <a class="code" href="main_8h.html#ad907d78ba4c74b87a38713ac0abd94e4">RMII_REF_CLK_Pin</a>|<a class="code" href="main_8h.html#acf77057aa54e355b956bd6d5cafc0b19">RMII_MDIO_Pin</a>|<a class="code" href="main_8h.html#ade243165f5d976d8dff74752c4a97f0f">RMII_CRS_DV_Pin</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    GPIO_InitStruct.Alternate = GPIO_AF11_ETH;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    HAL_GPIO_Init(GPIOA, &amp;GPIO_InitStruct);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    GPIO_InitStruct.Pin = <a class="code" href="main_8h.html#a582c2513143fe834c57d3db2ee7b7dc4">RMII_TXD1_Pin</a>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    GPIO_InitStruct.Alternate = GPIO_AF11_ETH;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    HAL_GPIO_Init(<a class="code" href="main_8h.html#a9886aa40b6e29ccd801b6b10c165bd7d">RMII_TXD1_GPIO_Port</a>, &amp;GPIO_InitStruct);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    GPIO_InitStruct.Pin = <a class="code" href="main_8h.html#a36389cf67d4a80347f399f93613ea2fc">RMII_TX_EN_Pin</a>|<a class="code" href="main_8h.html#a0e984c5c86e61480d27a0373cdc5e7ab">RMII_TXD0_Pin</a>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    GPIO_InitStruct.Alternate = GPIO_AF11_ETH;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    HAL_GPIO_Init(GPIOG, &amp;GPIO_InitStruct);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="comment">/* USER CODE BEGIN ETH_MspInit 1 */</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="comment">/* USER CODE END ETH_MspInit 1 */</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__msp_8c.html#adb9c31d86584307ca7791f3c3fbe58d9">  213</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__msp_8c.html#adb9c31d86584307ca7791f3c3fbe58d9">HAL_ETH_MspDeInit</a>(ETH_HandleTypeDef* <a class="code" href="main_8c.html#a3605d86556d96074ff098be46eca2837">heth</a>)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;{</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="main_8c.html#a3605d86556d96074ff098be46eca2837">heth</a>-&gt;Instance==ETH)</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="comment">/* USER CODE BEGIN ETH_MspDeInit 0 */</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="comment">/* USER CODE END ETH_MspDeInit 0 */</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="comment">/* Peripheral clock disable */</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    __HAL_RCC_ETH_CLK_DISABLE();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    HAL_GPIO_DeInit(GPIOC, <a class="code" href="main_8h.html#afa5f3c1b1c190b27bd2d75ebe05f89a5">RMII_MDC_Pin</a>|<a class="code" href="main_8h.html#ab7389bae0ff0d1ac0e52932833daf522">RMII_RXD0_Pin</a>|<a class="code" href="main_8h.html#ae12c799456376a83914b7c4d888fd7ea">RMII_RXD1_Pin</a>);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    HAL_GPIO_DeInit(GPIOA, <a class="code" href="main_8h.html#ad907d78ba4c74b87a38713ac0abd94e4">RMII_REF_CLK_Pin</a>|<a class="code" href="main_8h.html#acf77057aa54e355b956bd6d5cafc0b19">RMII_MDIO_Pin</a>|<a class="code" href="main_8h.html#ade243165f5d976d8dff74752c4a97f0f">RMII_CRS_DV_Pin</a>);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    HAL_GPIO_DeInit(<a class="code" href="main_8h.html#a9886aa40b6e29ccd801b6b10c165bd7d">RMII_TXD1_GPIO_Port</a>, <a class="code" href="main_8h.html#a582c2513143fe834c57d3db2ee7b7dc4">RMII_TXD1_Pin</a>);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    HAL_GPIO_DeInit(GPIOG, <a class="code" href="main_8h.html#a36389cf67d4a80347f399f93613ea2fc">RMII_TX_EN_Pin</a>|<a class="code" href="main_8h.html#a0e984c5c86e61480d27a0373cdc5e7ab">RMII_TXD0_Pin</a>);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="comment">/* USER CODE BEGIN ETH_MspDeInit 1 */</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="comment">/* USER CODE END ETH_MspDeInit 1 */</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__msp_8c.html#abe01a202c27b23fc150aa66af3130073">  255</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__msp_8c.html#abe01a202c27b23fc150aa66af3130073">HAL_I2C_MspInit</a>(I2C_HandleTypeDef* hi2c)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;{</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  GPIO_InitTypeDef GPIO_InitStruct = {0};</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keywordflow">if</span>(hi2c-&gt;Instance==I2C1)</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <span class="comment">/* USER CODE BEGIN I2C1_MspInit 0 */</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  <span class="comment">/* USER CODE END I2C1_MspInit 0 */</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    __HAL_RCC_GPIOB_CLK_ENABLE();</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    GPIO_InitStruct.Alternate = GPIO_AF4_I2C1;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    HAL_GPIO_Init(GPIOB, &amp;GPIO_InitStruct);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">/* Peripheral clock enable */</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    __HAL_RCC_I2C1_CLK_ENABLE();</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="comment">/* USER CODE BEGIN I2C1_MspInit 1 */</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="comment">/* USER CODE END I2C1_MspInit 1 */</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__msp_8c.html#a2ec8d9b09854c732e2feed549278f048">  291</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__msp_8c.html#a2ec8d9b09854c732e2feed549278f048">HAL_I2C_MspDeInit</a>(I2C_HandleTypeDef* hi2c)</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;{</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  <span class="keywordflow">if</span>(hi2c-&gt;Instance==I2C1)</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  <span class="comment">/* USER CODE BEGIN I2C1_MspDeInit 0 */</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="comment">/* USER CODE END I2C1_MspDeInit 0 */</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="comment">/* Peripheral clock disable */</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    __HAL_RCC_I2C1_CLK_DISABLE();</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_8);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_9);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  <span class="comment">/* USER CODE BEGIN I2C1_MspDeInit 1 */</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  <span class="comment">/* USER CODE END I2C1_MspDeInit 1 */</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  }</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;}</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__msp_8c.html#a0e553b32211877322f949b14801bbfa7">  322</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__msp_8c.html#a0e553b32211877322f949b14801bbfa7">HAL_UART_MspInit</a>(UART_HandleTypeDef* huart)</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;{</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  GPIO_InitTypeDef GPIO_InitStruct = {0};</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keywordflow">if</span>(huart-&gt;Instance==USART3)</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  {</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <span class="comment">/* USER CODE BEGIN USART3_MspInit 0 */</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="comment">/* USER CODE END USART3_MspInit 0 */</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="comment">/* Peripheral clock enable */</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    __HAL_RCC_USART3_CLK_ENABLE();</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    __HAL_RCC_GPIOD_CLK_ENABLE();</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    GPIO_InitStruct.Pin = <a class="code" href="main_8h.html#a391e95202d83d58334fd059e558d4190">STLK_RX_Pin</a>|<a class="code" href="main_8h.html#a83e767e1089a8c6eb2dba32adeffae6b">STLK_TX_Pin</a>;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    GPIO_InitStruct.Alternate = GPIO_AF7_USART3;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    HAL_GPIO_Init(GPIOD, &amp;GPIO_InitStruct);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  <span class="comment">/* USER CODE BEGIN USART3_MspInit 1 */</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  <span class="comment">/* USER CODE END USART3_MspInit 1 */</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  }</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;}</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__msp_8c.html#a718f39804e3b910d738a0e1e46151188">  358</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__msp_8c.html#a718f39804e3b910d738a0e1e46151188">HAL_UART_MspDeInit</a>(UART_HandleTypeDef* huart)</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;{</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  <span class="keywordflow">if</span>(huart-&gt;Instance==USART3)</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  {</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  <span class="comment">/* USER CODE BEGIN USART3_MspDeInit 0 */</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  <span class="comment">/* USER CODE END USART3_MspDeInit 0 */</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="comment">/* Peripheral clock disable */</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    __HAL_RCC_USART3_CLK_DISABLE();</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    HAL_GPIO_DeInit(GPIOD, <a class="code" href="main_8h.html#a391e95202d83d58334fd059e558d4190">STLK_RX_Pin</a>|<a class="code" href="main_8h.html#a83e767e1089a8c6eb2dba32adeffae6b">STLK_TX_Pin</a>);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  <span class="comment">/* USER CODE BEGIN USART3_MspDeInit 1 */</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  <span class="comment">/* USER CODE END USART3_MspDeInit 1 */</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  }</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__msp_8c.html#a73af972b44ba2890202363cd8b197dad">  387</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__msp_8c.html#a73af972b44ba2890202363cd8b197dad">HAL_PCD_MspInit</a>(PCD_HandleTypeDef* hpcd)</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;{</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  GPIO_InitTypeDef GPIO_InitStruct = {0};</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  <span class="keywordflow">if</span>(hpcd-&gt;Instance==USB_OTG_FS)</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  {</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  <span class="comment">/* USER CODE BEGIN USB_OTG_FS_MspInit 0 */</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  <span class="comment">/* USER CODE END USB_OTG_FS_MspInit 0 */</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    __HAL_RCC_GPIOA_CLK_ENABLE();</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    GPIO_InitStruct.Pin = <a class="code" href="main_8h.html#a827884915b2f7093d441d4ddf5631f35">USB_SOF_Pin</a>|<a class="code" href="main_8h.html#a86ea22a45a3f5ae4fea56c9641190942">USB_DM_Pin</a>|<a class="code" href="main_8h.html#a45a2d5ed538d75f095d08e2c71c42672">USB_DP_Pin</a>;</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    GPIO_InitStruct.Alternate = GPIO_AF10_OTG_FS;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    HAL_GPIO_Init(GPIOA, &amp;GPIO_InitStruct);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    GPIO_InitStruct.Pin = <a class="code" href="main_8h.html#a1ce85a590e1d720a478d0c7bd9c8c40e">USB_VBUS_Pin</a>;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    HAL_GPIO_Init(<a class="code" href="main_8h.html#a2215a8eb7ae97f4115da4aafa1c4ec5b">USB_VBUS_GPIO_Port</a>, &amp;GPIO_InitStruct);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="comment">/* Peripheral clock enable */</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    __HAL_RCC_USB_OTG_FS_CLK_ENABLE();</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;  <span class="comment">/* USER CODE BEGIN USB_OTG_FS_MspInit 1 */</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  <span class="comment">/* USER CODE END USB_OTG_FS_MspInit 1 */</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;  }</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;}</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00430"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__msp_8c.html#a8194c593b1db635b225c4b6294f31e47">  430</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__msp_8c.html#a8194c593b1db635b225c4b6294f31e47">HAL_PCD_MspDeInit</a>(PCD_HandleTypeDef* hpcd)</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;{</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;  <span class="keywordflow">if</span>(hpcd-&gt;Instance==USB_OTG_FS)</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  {</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  <span class="comment">/* USER CODE BEGIN USB_OTG_FS_MspDeInit 0 */</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  <span class="comment">/* USER CODE END USB_OTG_FS_MspDeInit 0 */</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="comment">/* Peripheral clock disable */</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    __HAL_RCC_USB_OTG_FS_CLK_DISABLE();</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    HAL_GPIO_DeInit(GPIOA, <a class="code" href="main_8h.html#a827884915b2f7093d441d4ddf5631f35">USB_SOF_Pin</a>|<a class="code" href="main_8h.html#a1ce85a590e1d720a478d0c7bd9c8c40e">USB_VBUS_Pin</a>|<a class="code" href="main_8h.html#a86ea22a45a3f5ae4fea56c9641190942">USB_DM_Pin</a>|<a class="code" href="main_8h.html#a45a2d5ed538d75f095d08e2c71c42672">USB_DP_Pin</a>);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;  <span class="comment">/* USER CODE BEGIN USB_OTG_FS_MspDeInit 1 */</span></div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;  <span class="comment">/* USER CODE END USB_OTG_FS_MspDeInit 1 */</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;  }</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;}</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; </div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="comment">/* USER CODE BEGIN 1 */</span></div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;<span class="comment">/* USER CODE END 1 */</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astm32f4xx__hal__msp_8c_html_a1ffa1e1337d6e52a3b175144a4505ea7"><div class="ttname"><a href="stm32f4xx__hal__msp_8c.html#a1ffa1e1337d6e52a3b175144a4505ea7">HAL_ETH_MspInit</a></div><div class="ttdeci">void HAL_ETH_MspInit(ETH_HandleTypeDef *heth)</div><div class="ttdoc">ETH MSP Initialization This function configures the hardware resources used in this example.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__msp_8c_source.html#l00146">stm32f4xx_hal_msp.c:146</a></div></div>
+<div class="ttc" id="amain_8h_html_a582c2513143fe834c57d3db2ee7b7dc4"><div class="ttname"><a href="main_8h.html#a582c2513143fe834c57d3db2ee7b7dc4">RMII_TXD1_Pin</a></div><div class="ttdeci">#define RMII_TXD1_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00078">main.h:78</a></div></div>
+<div class="ttc" id="amain_8h_html_a86ea22a45a3f5ae4fea56c9641190942"><div class="ttname"><a href="main_8h.html#a86ea22a45a3f5ae4fea56c9641190942">USB_DM_Pin</a></div><div class="ttdeci">#define USB_DM_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00094">main.h:94</a></div></div>
+<div class="ttc" id="astm32f4xx__hal__msp_8c_html_a0e553b32211877322f949b14801bbfa7"><div class="ttname"><a href="stm32f4xx__hal__msp_8c.html#a0e553b32211877322f949b14801bbfa7">HAL_UART_MspInit</a></div><div class="ttdeci">void HAL_UART_MspInit(UART_HandleTypeDef *huart)</div><div class="ttdoc">UART MSP Initialization This function configures the hardware resources used in this example.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__msp_8c_source.html#l00322">stm32f4xx_hal_msp.c:322</a></div></div>
+<div class="ttc" id="amain_8h_html_ad907d78ba4c74b87a38713ac0abd94e4"><div class="ttname"><a href="main_8h.html#ad907d78ba4c74b87a38713ac0abd94e4">RMII_REF_CLK_Pin</a></div><div class="ttdeci">#define RMII_REF_CLK_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00066">main.h:66</a></div></div>
+<div class="ttc" id="amain_8h_html_a1ce85a590e1d720a478d0c7bd9c8c40e"><div class="ttname"><a href="main_8h.html#a1ce85a590e1d720a478d0c7bd9c8c40e">USB_VBUS_Pin</a></div><div class="ttdeci">#define USB_VBUS_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00092">main.h:92</a></div></div>
+<div class="ttc" id="astm32f4xx__hal__msp_8c_html_a2ec8d9b09854c732e2feed549278f048"><div class="ttname"><a href="stm32f4xx__hal__msp_8c.html#a2ec8d9b09854c732e2feed549278f048">HAL_I2C_MspDeInit</a></div><div class="ttdeci">void HAL_I2C_MspDeInit(I2C_HandleTypeDef *hi2c)</div><div class="ttdoc">I2C MSP De-Initialization This function freeze the hardware resources used in this example.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__msp_8c_source.html#l00291">stm32f4xx_hal_msp.c:291</a></div></div>
+<div class="ttc" id="astm32f4xx__hal__msp_8c_html_a73af972b44ba2890202363cd8b197dad"><div class="ttname"><a href="stm32f4xx__hal__msp_8c.html#a73af972b44ba2890202363cd8b197dad">HAL_PCD_MspInit</a></div><div class="ttdeci">void HAL_PCD_MspInit(PCD_HandleTypeDef *hpcd)</div><div class="ttdoc">PCD MSP Initialization This function configures the hardware resources used in this example.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__msp_8c_source.html#l00387">stm32f4xx_hal_msp.c:387</a></div></div>
+<div class="ttc" id="astm32f4xx__hal__msp_8c_html_a39b0f8e80268ab3e660ead921ad4b22f"><div class="ttname"><a href="stm32f4xx__hal__msp_8c.html#a39b0f8e80268ab3e660ead921ad4b22f">HAL_ADC_MspDeInit</a></div><div class="ttdeci">void HAL_ADC_MspDeInit(ADC_HandleTypeDef *hadc)</div><div class="ttdoc">ADC MSP De-Initialization This function freeze the hardware resources used in this example.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__msp_8c_source.html#l00118">stm32f4xx_hal_msp.c:118</a></div></div>
+<div class="ttc" id="amain_8h_html_ae12c799456376a83914b7c4d888fd7ea"><div class="ttname"><a href="main_8h.html#ae12c799456376a83914b7c4d888fd7ea">RMII_RXD1_Pin</a></div><div class="ttdeci">#define RMII_RXD1_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00074">main.h:74</a></div></div>
+<div class="ttc" id="amain_8h_html_a36389cf67d4a80347f399f93613ea2fc"><div class="ttname"><a href="main_8h.html#a36389cf67d4a80347f399f93613ea2fc">RMII_TX_EN_Pin</a></div><div class="ttdeci">#define RMII_TX_EN_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00102">main.h:102</a></div></div>
+<div class="ttc" id="astm32f4xx__hal__msp_8c_html_ae4fb8e66865c87d0ebab74a726a6891f"><div class="ttname"><a href="stm32f4xx__hal__msp_8c.html#ae4fb8e66865c87d0ebab74a726a6891f">HAL_MspInit</a></div><div class="ttdeci">void HAL_MspInit(void)</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__msp_8c_source.html#l00063">stm32f4xx_hal_msp.c:63</a></div></div>
+<div class="ttc" id="amain_8h_html_a83e767e1089a8c6eb2dba32adeffae6b"><div class="ttname"><a href="main_8h.html#a83e767e1089a8c6eb2dba32adeffae6b">STLK_TX_Pin</a></div><div class="ttdeci">#define STLK_TX_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00084">main.h:84</a></div></div>
+<div class="ttc" id="astm32f4xx__hal__msp_8c_html_abe01a202c27b23fc150aa66af3130073"><div class="ttname"><a href="stm32f4xx__hal__msp_8c.html#abe01a202c27b23fc150aa66af3130073">HAL_I2C_MspInit</a></div><div class="ttdeci">void HAL_I2C_MspInit(I2C_HandleTypeDef *hi2c)</div><div class="ttdoc">I2C MSP Initialization This function configures the hardware resources used in this example.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__msp_8c_source.html#l00255">stm32f4xx_hal_msp.c:255</a></div></div>
+<div class="ttc" id="amain_8h_html_ab7389bae0ff0d1ac0e52932833daf522"><div class="ttname"><a href="main_8h.html#ab7389bae0ff0d1ac0e52932833daf522">RMII_RXD0_Pin</a></div><div class="ttdeci">#define RMII_RXD0_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00072">main.h:72</a></div></div>
+<div class="ttc" id="amain_8h_html_ade243165f5d976d8dff74752c4a97f0f"><div class="ttname"><a href="main_8h.html#ade243165f5d976d8dff74752c4a97f0f">RMII_CRS_DV_Pin</a></div><div class="ttdeci">#define RMII_CRS_DV_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00070">main.h:70</a></div></div>
+<div class="ttc" id="astm32f4xx__hal__msp_8c_html_adb9c31d86584307ca7791f3c3fbe58d9"><div class="ttname"><a href="stm32f4xx__hal__msp_8c.html#adb9c31d86584307ca7791f3c3fbe58d9">HAL_ETH_MspDeInit</a></div><div class="ttdeci">void HAL_ETH_MspDeInit(ETH_HandleTypeDef *heth)</div><div class="ttdoc">ETH MSP De-Initialization This function freeze the hardware resources used in this example.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__msp_8c_source.html#l00213">stm32f4xx_hal_msp.c:213</a></div></div>
+<div class="ttc" id="amain_8h_html_a827884915b2f7093d441d4ddf5631f35"><div class="ttname"><a href="main_8h.html#a827884915b2f7093d441d4ddf5631f35">USB_SOF_Pin</a></div><div class="ttdeci">#define USB_SOF_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00090">main.h:90</a></div></div>
+<div class="ttc" id="amain_8h_html_a2215a8eb7ae97f4115da4aafa1c4ec5b"><div class="ttname"><a href="main_8h.html#a2215a8eb7ae97f4115da4aafa1c4ec5b">USB_VBUS_GPIO_Port</a></div><div class="ttdeci">#define USB_VBUS_GPIO_Port</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00093">main.h:93</a></div></div>
+<div class="ttc" id="astm32f4xx__hal__msp_8c_html_a718f39804e3b910d738a0e1e46151188"><div class="ttname"><a href="stm32f4xx__hal__msp_8c.html#a718f39804e3b910d738a0e1e46151188">HAL_UART_MspDeInit</a></div><div class="ttdeci">void HAL_UART_MspDeInit(UART_HandleTypeDef *huart)</div><div class="ttdoc">UART MSP De-Initialization This function freeze the hardware resources used in this example.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__msp_8c_source.html#l00358">stm32f4xx_hal_msp.c:358</a></div></div>
+<div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">: Header for main.c file. This file contains the common defines of the application.</div></div>
+<div class="ttc" id="amain_8h_html_afa5f3c1b1c190b27bd2d75ebe05f89a5"><div class="ttname"><a href="main_8h.html#afa5f3c1b1c190b27bd2d75ebe05f89a5">RMII_MDC_Pin</a></div><div class="ttdeci">#define RMII_MDC_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00064">main.h:64</a></div></div>
+<div class="ttc" id="amain_8h_html_acf77057aa54e355b956bd6d5cafc0b19"><div class="ttname"><a href="main_8h.html#acf77057aa54e355b956bd6d5cafc0b19">RMII_MDIO_Pin</a></div><div class="ttdeci">#define RMII_MDIO_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00068">main.h:68</a></div></div>
+<div class="ttc" id="astm32f4xx__hal__msp_8c_html_aa30863492d5c3103e3e8ce8a63dadd07"><div class="ttname"><a href="stm32f4xx__hal__msp_8c.html#aa30863492d5c3103e3e8ce8a63dadd07">HAL_ADC_MspInit</a></div><div class="ttdeci">void HAL_ADC_MspInit(ADC_HandleTypeDef *hadc)</div><div class="ttdoc">ADC MSP Initialization This function configures the hardware resources used in this example.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__msp_8c_source.html#l00085">stm32f4xx_hal_msp.c:85</a></div></div>
+<div class="ttc" id="amain_8h_html_a45a2d5ed538d75f095d08e2c71c42672"><div class="ttname"><a href="main_8h.html#a45a2d5ed538d75f095d08e2c71c42672">USB_DP_Pin</a></div><div class="ttdeci">#define USB_DP_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00096">main.h:96</a></div></div>
+<div class="ttc" id="amain_8h_html_a0e984c5c86e61480d27a0373cdc5e7ab"><div class="ttname"><a href="main_8h.html#a0e984c5c86e61480d27a0373cdc5e7ab">RMII_TXD0_Pin</a></div><div class="ttdeci">#define RMII_TXD0_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00104">main.h:104</a></div></div>
+<div class="ttc" id="amain_8h_html_a391e95202d83d58334fd059e558d4190"><div class="ttname"><a href="main_8h.html#a391e95202d83d58334fd059e558d4190">STLK_RX_Pin</a></div><div class="ttdeci">#define STLK_RX_Pin</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00082">main.h:82</a></div></div>
+<div class="ttc" id="astm32f4xx__hal__msp_8c_html_a8194c593b1db635b225c4b6294f31e47"><div class="ttname"><a href="stm32f4xx__hal__msp_8c.html#a8194c593b1db635b225c4b6294f31e47">HAL_PCD_MspDeInit</a></div><div class="ttdeci">void HAL_PCD_MspDeInit(PCD_HandleTypeDef *hpcd)</div><div class="ttdoc">PCD MSP De-Initialization This function freeze the hardware resources used in this example.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__msp_8c_source.html#l00430">stm32f4xx_hal_msp.c:430</a></div></div>
+<div class="ttc" id="amain_8c_html_a3605d86556d96074ff098be46eca2837"><div class="ttname"><a href="main_8c.html#a3605d86556d96074ff098be46eca2837">heth</a></div><div class="ttdeci">ETH_HandleTypeDef heth</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00051">main.c:51</a></div></div>
+<div class="ttc" id="amain_8h_html_a9886aa40b6e29ccd801b6b10c165bd7d"><div class="ttname"><a href="main_8h.html#a9886aa40b6e29ccd801b6b10c165bd7d">RMII_TXD1_GPIO_Port</a></div><div class="ttdeci">#define RMII_TXD1_GPIO_Port</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00079">main.h:79</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

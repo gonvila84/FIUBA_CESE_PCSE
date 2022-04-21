@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Driver para el sensor de temperatura TEMP102 (STM32-F429ZI): Referencia del Archivo Core/Inc/Driver_TMP102.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Driver para el sensor de temperatura TEMP102 (STM32-F429ZI)
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Trabajo práctico final de la materia Protocolos De Comunicación En Sistemas Embebidos (FIUBA-CESE) del alumno Gonzalo Vila</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">typedefs</a> &#124;
+<a href="#enum-members">Enumeraciones</a> &#124;
+<a href="#func-members">Funciones</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo Driver_TMP102.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+</div>
+<p><a href="Driver__TMP102_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+typedefs</h2></td></tr>
+<tr class="memitem:a2b21255bd7f7192db778983b15089208"><td class="memItemLeft" align="right" valign="top">typedef bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a2b21255bd7f7192db778983b15089208">bool_t</a></td></tr>
+<tr class="separator:a2b21255bd7f7192db778983b15089208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433b94d5120047d2f6a5153102fe283b"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32">configResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">tmp102configResult_t</a></td></tr>
+<tr class="memdesc:a433b94d5120047d2f6a5153102fe283b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef para la enumeración configResult.&#160;.  <a href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">Más...</a><br /></td></tr>
+<tr class="separator:a433b94d5120047d2f6a5153102fe283b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeaddd2230fb2cf2349d4600304e3f84"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96">communicationResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a></td></tr>
+<tr class="memdesc:abeaddd2230fb2cf2349d4600304e3f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef para la enumeración communicationResult.&#160;.  <a href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">Más...</a><br /></td></tr>
+<tr class="separator:abeaddd2230fb2cf2349d4600304e3f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f060766a008c9e88c6231d1b149b89"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571">operationsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a78f060766a008c9e88c6231d1b149b89">tmp102opsResult_t</a></td></tr>
+<tr class="memdesc:a78f060766a008c9e88c6231d1b149b89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef para la enumeración operationsResult.&#160;.  <a href="Driver__TMP102_8h.html#a78f060766a008c9e88c6231d1b149b89">Más...</a><br /></td></tr>
+<tr class="separator:a78f060766a008c9e88c6231d1b149b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad95de9eca685d58db4b69a9e1c3c8cdf"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4">measureUnit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a></td></tr>
+<tr class="memdesc:ad95de9eca685d58db4b69a9e1c3c8cdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef para la enumeración measureUnit.&#160;.  <a href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">Más...</a><br /></td></tr>
+<tr class="separator:ad95de9eca685d58db4b69a9e1c3c8cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a2b581a0905908186f2fb27e06be48"><td class="memItemLeft" align="right" valign="top">typedef float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a24a2b581a0905908186f2fb27e06be48">tmp102temperature_t</a></td></tr>
+<tr class="memdesc:a24a2b581a0905908186f2fb27e06be48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de datos utilizado para almacenar un registro de temperatura.&#160;.  <a href="Driver__TMP102_8h.html#a24a2b581a0905908186f2fb27e06be48">Más...</a><br /></td></tr>
+<tr class="separator:a24a2b581a0905908186f2fb27e06be48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a048d1b6ff1382c2d33dd626e730c1195"><td class="memItemLeft" align="right" valign="top">typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">tmp102address_t</a></td></tr>
+<tr class="memdesc:a048d1b6ff1382c2d33dd626e730c1195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de datos utilizado para almacenar la dirección del I2C slave.  <a href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">Más...</a><br /></td></tr>
+<tr class="separator:a048d1b6ff1382c2d33dd626e730c1195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2d8292ff5fc57e1685155c464c6df2"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">tmp102transmissionTimeout_t</a></td></tr>
+<tr class="memdesc:a7a2d8292ff5fc57e1685155c464c6df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de datos utilizado para definir timeouts en las transacciones I2C.  <a href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">Más...</a><br /></td></tr>
+<tr class="separator:a7a2d8292ff5fc57e1685155c464c6df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11e941786b472cb62698662b6d499222"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">tmp102transmissionPayload_t</a></td></tr>
+<tr class="memdesc:a11e941786b472cb62698662b6d499222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de datos utilizado para enviar/recibir el payload de una transacción I2C.  <a href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">Más...</a><br /></td></tr>
+<tr class="separator:a11e941786b472cb62698662b6d499222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:ac0ccc9d7901b4700e1e681284f2e4a32"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32">configResult</a> { <a class="el" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32aa767cbfa4104fb62237fefbb07945571">TMP102_CONFIG_SUCCESS</a>, 
+<a class="el" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32a76c45c027fb891b4efb87b41285d29ea">TMP102_CONFIG_FAIL</a>
+ }</td></tr>
+<tr class="memdesc:ac0ccc9d7901b4700e1e681284f2e4a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeración utilizada para reflejar el resultado de una operación de configuración del driver.&#160;.  <a href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32">Más...</a><br /></td></tr>
+<tr class="separator:ac0ccc9d7901b4700e1e681284f2e4a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41ba9a2fd5c3694ac23a2417fe9a3d96"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96">communicationResult</a> { <br />
+&#160;&#160;<a class="el" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a24024a415aba969592eb49a0f8d2361a">TMP102_SEND_SUCCESS</a>, 
+<a class="el" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a319f61a142b008282a76615e73a5cf56">TMP102_SEND_FAILURE</a>, 
+<a class="el" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a7105f2e48798d292facf75aa0302f506">TMP102_RECEIVE_SUCCESS</a>, 
+<a class="el" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96ad277a4679ee379a0506aac46534b0119">TMP102_RECEIVE_FAILURE</a>, 
+<br />
+&#160;&#160;<a class="el" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a1882f84b85114de42618af7617865152">TMP102_SEND_BUSY</a>, 
+<a class="el" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96ac35702ed6580ebbb21951f8a4c496714">TMP102_RECEIVE_BUSY</a>, 
+<a class="el" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a8b2677eca9fad987bfa1a1f81b9beb79">TMP102_SEND_TIMEOUT</a>, 
+<a class="el" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a56a03cad15859c3387586d4fa529f9e7">TMP102_RECEIVE_TIMEOUT</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a41ba9a2fd5c3694ac23a2417fe9a3d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeración utilizada para reflejar el resultado de una operación de configuración del driver.&#160;.  <a href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96">Más...</a><br /></td></tr>
+<tr class="separator:a41ba9a2fd5c3694ac23a2417fe9a3d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a940b4cdd776329abd09cb148809e9571"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571">operationsResult</a> { <a class="el" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571abe7c7bb2e519e494ec6fc200a9ee28c4">TMP102_OPS_OK</a>, 
+<a class="el" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571ac86574f1a80b3f1ee2b17f66334bfc8d">TMP102_OPS_FAILED</a>
+ }</td></tr>
+<tr class="memdesc:a940b4cdd776329abd09cb148809e9571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeración utilizada para reflejar el resultado de una transacción con el driver (ej: solicitar la temperatura).&#160;.  <a href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571">Más...</a><br /></td></tr>
+<tr class="separator:a940b4cdd776329abd09cb148809e9571"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27f1828aa60d6e6fa9123ad8e1884ed4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4">measureUnit</a> { <a class="el" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4ab788c882d39407e80b48d2a10786eae7">CELSIUS</a>, 
+<a class="el" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4a8b74b891ade5ec17d65734b07cc98ca6">FAHRENHEIT</a>
+ }</td></tr>
+<tr class="memdesc:a27f1828aa60d6e6fa9123ad8e1884ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeración utilizada distinguir las unidades de medición de temperatura con las que opera el driver.&#160;.  <a href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4">Más...</a><br /></td></tr>
+<tr class="separator:a27f1828aa60d6e6fa9123ad8e1884ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:aaec54e8828594755e8f82dfc500bef21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">tmp102configResult_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#aaec54e8828594755e8f82dfc500bef21">TMP102_InitDriver</a> (<a class="el" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a> <a class="el" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4">measureUnit</a>)</td></tr>
+<tr class="memdesc:aaec54e8828594755e8f82dfc500bef21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de inicialización del driver.  <a href="Driver__TMP102_8h.html#aaec54e8828594755e8f82dfc500bef21">Más...</a><br /></td></tr>
+<tr class="separator:aaec54e8828594755e8f82dfc500bef21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23f61d558c56e086285b03e07f924554"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a23f61d558c56e086285b03e07f924554">TMP102_SetTemperatureMeasureUnit</a> (<a class="el" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a> resultMeasureUnit)</td></tr>
+<tr class="memdesc:a23f61d558c56e086285b03e07f924554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de configuración de la unidad de medición de temperatura (FAHRENHEIT | CELSIUS)&#160; Modifica la unidad en la que se expresa la temperatura.  <a href="Driver__TMP102_8h.html#a23f61d558c56e086285b03e07f924554">Más...</a><br /></td></tr>
+<tr class="separator:a23f61d558c56e086285b03e07f924554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa45053dc1edf230bb4fa6d862e9bd25c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#aa45053dc1edf230bb4fa6d862e9bd25c">TMP102_GetTemperatureMeasureUnit</a> ()</td></tr>
+<tr class="memdesc:aa45053dc1edf230bb4fa6d862e9bd25c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la unidad de medición utilizada para expresar la temperatura.  <a href="Driver__TMP102_8h.html#aa45053dc1edf230bb4fa6d862e9bd25c">Más...</a><br /></td></tr>
+<tr class="separator:aa45053dc1edf230bb4fa6d862e9bd25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d822c3956824ea4d16800d3e8327550"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Driver__TMP102_8h.html#a78f060766a008c9e88c6231d1b149b89">tmp102opsResult_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a6d822c3956824ea4d16800d3e8327550">TMP102_GetTemperature</a> (<a class="el" href="Driver__TMP102_8h.html#a24a2b581a0905908186f2fb27e06be48">tmp102temperature_t</a> *temperature)</td></tr>
+<tr class="memdesc:a6d822c3956824ea4d16800d3e8327550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solicita al sensor el registro de la temperatura Esta función obtiene el valor actual de la temperatura registrada por el sensor TMP102.  <a href="Driver__TMP102_8h.html#a6d822c3956824ea4d16800d3e8327550">Más...</a><br /></td></tr>
+<tr class="separator:a6d822c3956824ea4d16800d3e8327550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454a25314ea57496c9f31a6caef59139"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Driver__TMP102_8h.html#a78f060766a008c9e88c6231d1b149b89">tmp102opsResult_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__TMP102_8h.html#a454a25314ea57496c9f31a6caef59139">TMP102_TestMeasurement</a> (void)</td></tr>
+<tr class="memdesc:a454a25314ea57496c9f31a6caef59139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza una prueba de medición para verificar el estado del sensor. Intenta obtener un registro de temperatura para verificar la salud del sensor.  <a href="Driver__TMP102_8h.html#a454a25314ea57496c9f31a6caef59139">Más...</a><br /></td></tr>
+<tr class="separator:a454a25314ea57496c9f31a6caef59139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de los 'typedefs'</h2>
+<a id="a2b21255bd7f7192db778983b15089208"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b21255bd7f7192db778983b15089208">&#9670;&nbsp;</a></span>bool_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef bool <a class="el" href="Driver__TMP102_8h.html#a2b21255bd7f7192db778983b15089208">bool_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00007">7</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<a id="a048d1b6ff1382c2d33dd626e730c1195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a048d1b6ff1382c2d33dd626e730c1195">&#9670;&nbsp;</a></span>tmp102address_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint16_t <a class="el" href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">tmp102address_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tipo de datos utilizado para almacenar la dirección del I2C slave. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00072">72</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<a id="abeaddd2230fb2cf2349d4600304e3f84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeaddd2230fb2cf2349d4600304e3f84">&#9670;&nbsp;</a></span>tmp102commResult_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96">communicationResult</a> <a class="el" href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Typedef para la enumeración communicationResult.&#160;. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00052">52</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<a id="a433b94d5120047d2f6a5153102fe283b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a433b94d5120047d2f6a5153102fe283b">&#9670;&nbsp;</a></span>tmp102configResult_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32">configResult</a> <a class="el" href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">tmp102configResult_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Typedef para la enumeración configResult.&#160;. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00047">47</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<a id="ad95de9eca685d58db4b69a9e1c3c8cdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad95de9eca685d58db4b69a9e1c3c8cdf">&#9670;&nbsp;</a></span>tmp102measureUnit_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4">measureUnit</a> <a class="el" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Typedef para la enumeración measureUnit.&#160;. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00062">62</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<a id="a78f060766a008c9e88c6231d1b149b89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78f060766a008c9e88c6231d1b149b89">&#9670;&nbsp;</a></span>tmp102opsResult_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571">operationsResult</a> <a class="el" href="Driver__TMP102_8h.html#a78f060766a008c9e88c6231d1b149b89">tmp102opsResult_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Typedef para la enumeración operationsResult.&#160;. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00057">57</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<a id="a24a2b581a0905908186f2fb27e06be48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a2b581a0905908186f2fb27e06be48">&#9670;&nbsp;</a></span>tmp102temperature_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef float <a class="el" href="Driver__TMP102_8h.html#a24a2b581a0905908186f2fb27e06be48">tmp102temperature_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tipo de datos utilizado para almacenar un registro de temperatura.&#160;. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00067">67</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<a id="a11e941786b472cb62698662b6d499222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11e941786b472cb62698662b6d499222">&#9670;&nbsp;</a></span>tmp102transmissionPayload_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint8_t <a class="el" href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">tmp102transmissionPayload_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tipo de datos utilizado para enviar/recibir el payload de una transacción I2C. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00082">82</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<a id="a7a2d8292ff5fc57e1685155c464c6df2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a2d8292ff5fc57e1685155c464c6df2">&#9670;&nbsp;</a></span>tmp102transmissionTimeout_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint32_t <a class="el" href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">tmp102transmissionTimeout_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tipo de datos utilizado para definir timeouts en las transacciones I2C. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00077">77</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las enumeraciones</h2>
+<a id="a41ba9a2fd5c3694ac23a2417fe9a3d96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41ba9a2fd5c3694ac23a2417fe9a3d96">&#9670;&nbsp;</a></span>communicationResult</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96">communicationResult</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumeración utilizada para reflejar el resultado de una operación de configuración del driver.&#160;. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a41ba9a2fd5c3694ac23a2417fe9a3d96a24024a415aba969592eb49a0f8d2361a"></a>TMP102_SEND_SUCCESS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a41ba9a2fd5c3694ac23a2417fe9a3d96a319f61a142b008282a76615e73a5cf56"></a>TMP102_SEND_FAILURE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a41ba9a2fd5c3694ac23a2417fe9a3d96a7105f2e48798d292facf75aa0302f506"></a>TMP102_RECEIVE_SUCCESS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a41ba9a2fd5c3694ac23a2417fe9a3d96ad277a4679ee379a0506aac46534b0119"></a>TMP102_RECEIVE_FAILURE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a41ba9a2fd5c3694ac23a2417fe9a3d96a1882f84b85114de42618af7617865152"></a>TMP102_SEND_BUSY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a41ba9a2fd5c3694ac23a2417fe9a3d96ac35702ed6580ebbb21951f8a4c496714"></a>TMP102_RECEIVE_BUSY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a41ba9a2fd5c3694ac23a2417fe9a3d96a8b2677eca9fad987bfa1a1f81b9beb79"></a>TMP102_SEND_TIMEOUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a41ba9a2fd5c3694ac23a2417fe9a3d96a56a03cad15859c3387586d4fa529f9e7"></a>TMP102_RECEIVE_TIMEOUT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00020">20</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<a id="ac0ccc9d7901b4700e1e681284f2e4a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0ccc9d7901b4700e1e681284f2e4a32">&#9670;&nbsp;</a></span>configResult</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32">configResult</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumeración utilizada para reflejar el resultado de una operación de configuración del driver.&#160;. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="ac0ccc9d7901b4700e1e681284f2e4a32aa767cbfa4104fb62237fefbb07945571"></a>TMP102_CONFIG_SUCCESS&#160;</td><td class="fielddoc"><p>enum value 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac0ccc9d7901b4700e1e681284f2e4a32a76c45c027fb891b4efb87b41285d29ea"></a>TMP102_CONFIG_FAIL&#160;</td><td class="fielddoc"><p>enum value 2 </p>
+</td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00012">12</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<a id="a27f1828aa60d6e6fa9123ad8e1884ed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27f1828aa60d6e6fa9123ad8e1884ed4">&#9670;&nbsp;</a></span>measureUnit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4">measureUnit</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumeración utilizada distinguir las unidades de medición de temperatura con las que opera el driver.&#160;. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a27f1828aa60d6e6fa9123ad8e1884ed4ab788c882d39407e80b48d2a10786eae7"></a>CELSIUS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a27f1828aa60d6e6fa9123ad8e1884ed4a8b74b891ade5ec17d65734b07cc98ca6"></a>FAHRENHEIT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00042">42</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<a id="a940b4cdd776329abd09cb148809e9571"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a940b4cdd776329abd09cb148809e9571">&#9670;&nbsp;</a></span>operationsResult</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571">operationsResult</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumeración utilizada para reflejar el resultado de una transacción con el driver (ej: solicitar la temperatura).&#160;. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a940b4cdd776329abd09cb148809e9571abe7c7bb2e519e494ec6fc200a9ee28c4"></a>TMP102_OPS_OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a940b4cdd776329abd09cb148809e9571ac86574f1a80b3f1ee2b17f66334bfc8d"></a>TMP102_OPS_FAILED&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8h_source.html#l00034">34</a> del archivo <a class="el" href="Driver__TMP102_8h_source.html">Driver_TMP102.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a6d822c3956824ea4d16800d3e8327550"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d822c3956824ea4d16800d3e8327550">&#9670;&nbsp;</a></span>TMP102_GetTemperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Driver__TMP102_8h.html#a78f060766a008c9e88c6231d1b149b89">tmp102opsResult_t</a> TMP102_GetTemperature </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Driver__TMP102_8h.html#a24a2b581a0905908186f2fb27e06be48">tmp102temperature_t</a> *&#160;</td>
+          <td class="paramname"><em>temperature</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Solicita al sensor el registro de la temperatura Esta función obtiene el valor actual de la temperatura registrada por el sensor TMP102. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tmp102measureUnit_t</td><td>(enum) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>tmp102opsResult_t (enum)</dd></dl>
+<p>Solicita al sensor el registro de la temperatura Esta función obtiene el valor actual de la temperatura registrada por el sensor TMP102.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tmp102temperature_t</td><td>* </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>tmp102opsResult_t </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8c_source.html#l00065">65</a> del archivo <a class="el" href="Driver__TMP102_8c_source.html">Driver_TMP102.c</a>.</p>
+
+</div>
+</div>
+<a id="aa45053dc1edf230bb4fa6d862e9bd25c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa45053dc1edf230bb4fa6d862e9bd25c">&#9670;&nbsp;</a></span>TMP102_GetTemperatureMeasureUnit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a> TMP102_GetTemperatureMeasureUnit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve la unidad de medición utilizada para expresar la temperatura. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>tmp102measureUnit_t (enum)</dd></dl>
+<p>Devuelve la unidad de medición utilizada para expresar la temperatura.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>tmp102measureUnit_t </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8c_source.html#l00045">45</a> del archivo <a class="el" href="Driver__TMP102_8c_source.html">Driver_TMP102.c</a>.</p>
+
+</div>
+</div>
+<a id="aaec54e8828594755e8f82dfc500bef21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaec54e8828594755e8f82dfc500bef21">&#9670;&nbsp;</a></span>TMP102_InitDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">tmp102configResult_t</a> TMP102_InitDriver </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a>&#160;</td>
+          <td class="paramname"><em>measureUnit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función de inicialización del driver. </p>
+<p>Esta función debe ser invocada antes que cualquier otra. Realiza la configuración de la unidad de medición que utilizara el driver (FAHRENHEIT | CELSIUS). Inicializa el hardware y los handlers correspondientes a la plataforma en uso.&#160;</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tmp102measureUnit_t</td><td>(enum) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>tmp102configResult_t (enum)</dd></dl>
+<p>Función de inicialización del driver.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tmp102measureUnit_t</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>tmp102configResult_t </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8c_source.html#l00026">26</a> del archivo <a class="el" href="Driver__TMP102_8c_source.html">Driver_TMP102.c</a>.</p>
+
+</div>
+</div>
+<a id="a23f61d558c56e086285b03e07f924554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23f61d558c56e086285b03e07f924554">&#9670;&nbsp;</a></span>TMP102_SetTemperatureMeasureUnit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TMP102_SetTemperatureMeasureUnit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a>&#160;</td>
+          <td class="paramname"><em>resultMeasureUnit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función de configuración de la unidad de medición de temperatura (FAHRENHEIT | CELSIUS)&#160; Modifica la unidad en la que se expresa la temperatura. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tmp102measureUnit_t</td><td>(enum) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void</dd></dl>
+<p>Función de configuración de la unidad de medición de temperatura (FAHRENHEIT | CELSIUS)&#160; Modifica la unidad en la que se expresa la temperatura.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tmp102measureUnit_t</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8c_source.html#l00054">54</a> del archivo <a class="el" href="Driver__TMP102_8c_source.html">Driver_TMP102.c</a>.</p>
+
+</div>
+</div>
+<a id="a454a25314ea57496c9f31a6caef59139"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454a25314ea57496c9f31a6caef59139">&#9670;&nbsp;</a></span>TMP102_TestMeasurement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Driver__TMP102_8h.html#a78f060766a008c9e88c6231d1b149b89">tmp102opsResult_t</a> TMP102_TestMeasurement </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realiza una prueba de medición para verificar el estado del sensor. Intenta obtener un registro de temperatura para verificar la salud del sensor. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>tmp102opsResult_t</dd></dl>
+<p>Realiza una prueba de medición para verificar el estado del sensor. Intenta obtener un registro de temperatura para verificar la salud del sensor.</p>
+<p>Esta función es utilizada para verificar que el sensor reporta datos.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>tmp102commResult_t (enum) </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Driver__TMP102_8c_source.html#l00120">120</a> del archivo <a class="el" href="Driver__TMP102_8c_source.html">Driver_TMP102.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

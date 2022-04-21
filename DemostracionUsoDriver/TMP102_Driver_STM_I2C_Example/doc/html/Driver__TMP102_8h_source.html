@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Driver para el sensor de temperatura TEMP102 (STM32-F429ZI): Fichero Fuente Core/Inc/Driver_TMP102.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Driver para el sensor de temperatura TEMP102 (STM32-F429ZI)
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Trabajo práctico final de la materia Protocolos De Comunicación En Sistemas Embebidos (FIUBA-CESE) del alumno Gonzalo Vila</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Driver_TMP102.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Driver__TMP102_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INC_DRIVER_TMP102_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define INC_DRIVER_TMP102_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a2b21255bd7f7192db778983b15089208">    7</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">bool</span> <a class="code" href="Driver__TMP102_8h.html#a2b21255bd7f7192db778983b15089208">bool_t</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32">   12</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32">configResult</a>                   {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32aa767cbfa4104fb62237fefbb07945571">   13</a></span>&#160;                                        <a class="code" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32aa767cbfa4104fb62237fefbb07945571">TMP102_CONFIG_SUCCESS</a>,      </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32a76c45c027fb891b4efb87b41285d29ea">   14</a></span>&#160;                                        <a class="code" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32a76c45c027fb891b4efb87b41285d29ea">TMP102_CONFIG_FAIL</a>          </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                    };</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96">   20</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96">communicationResult</a>            {</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a24024a415aba969592eb49a0f8d2361a">   21</a></span>&#160;                                         <a class="code" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a24024a415aba969592eb49a0f8d2361a">TMP102_SEND_SUCCESS</a>,</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a319f61a142b008282a76615e73a5cf56">   22</a></span>&#160;                                         <a class="code" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a319f61a142b008282a76615e73a5cf56">TMP102_SEND_FAILURE</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a7105f2e48798d292facf75aa0302f506">   23</a></span>&#160;                                         <a class="code" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a7105f2e48798d292facf75aa0302f506">TMP102_RECEIVE_SUCCESS</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96ad277a4679ee379a0506aac46534b0119">   24</a></span>&#160;                                         <a class="code" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96ad277a4679ee379a0506aac46534b0119">TMP102_RECEIVE_FAILURE</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a1882f84b85114de42618af7617865152">   25</a></span>&#160;                                         <a class="code" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a1882f84b85114de42618af7617865152">TMP102_SEND_BUSY</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96ac35702ed6580ebbb21951f8a4c496714">   26</a></span>&#160;                                         <a class="code" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96ac35702ed6580ebbb21951f8a4c496714">TMP102_RECEIVE_BUSY</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a8b2677eca9fad987bfa1a1f81b9beb79">   27</a></span>&#160;                                         <a class="code" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a8b2677eca9fad987bfa1a1f81b9beb79">TMP102_SEND_TIMEOUT</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a56a03cad15859c3387586d4fa529f9e7">   28</a></span>&#160;                                         <a class="code" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a56a03cad15859c3387586d4fa529f9e7">TMP102_RECEIVE_TIMEOUT</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                    };</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571">   34</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571">operationsResult</a>               {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571abe7c7bb2e519e494ec6fc200a9ee28c4">   35</a></span>&#160;                                         <a class="code" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571abe7c7bb2e519e494ec6fc200a9ee28c4">TMP102_OPS_OK</a>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571ac86574f1a80b3f1ee2b17f66334bfc8d">   36</a></span>&#160;                                         <a class="code" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571ac86574f1a80b3f1ee2b17f66334bfc8d">TMP102_OPS_FAILED</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                    };</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4">   42</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4">measureUnit</a>                    {<a class="code" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4ab788c882d39407e80b48d2a10786eae7">CELSIUS</a>, <a class="code" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4a8b74b891ade5ec17d65734b07cc98ca6">FAHRENHEIT</a>};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">   47</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32">configResult</a>           <a class="code" href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">tmp102configResult_t</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">   52</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96">communicationResult</a>    <a class="code" href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a78f060766a008c9e88c6231d1b149b89">   57</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571">operationsResult</a>       <a class="code" href="Driver__TMP102_8h.html#a78f060766a008c9e88c6231d1b149b89">tmp102opsResult_t</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">   62</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4">measureUnit</a>            <a class="code" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a24a2b581a0905908186f2fb27e06be48">   67</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">float</span>                       <a class="code" href="Driver__TMP102_8h.html#a24a2b581a0905908186f2fb27e06be48">tmp102temperature_t</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">   72</a></span>&#160;<span class="keyword">typedef</span> uint16_t                    <a class="code" href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">tmp102address_t</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">   77</a></span>&#160;<span class="keyword">typedef</span> uint32_t                    <a class="code" href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">tmp102transmissionTimeout_t</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">   82</a></span>&#160;<span class="keyword">typedef</span> uint8_t                     <a class="code" href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">tmp102transmissionPayload_t</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">tmp102address_t</a>                TMP102_ADDRESS = (0X48 &lt;&lt; 1);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">tmp102transmissionTimeout_t</a>    TMP102_TRANSMISSION_TIMEOUT = 0xFFFFFFFFU;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<a class="code" href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">tmp102configResult_t</a>    <a class="code" href="Driver__TMP102_8h.html#aaec54e8828594755e8f82dfc500bef21">TMP102_InitDriver</a>                   (<a class="code" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a> <a class="code" href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4">measureUnit</a>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">void</span>                    <a class="code" href="Driver__TMP102_8h.html#a23f61d558c56e086285b03e07f924554">TMP102_SetTemperatureMeasureUnit</a>    (<a class="code" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a> resultMeasureUnit);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<a class="code" href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a>     <a class="code" href="Driver__TMP102_8h.html#aa45053dc1edf230bb4fa6d862e9bd25c">TMP102_GetTemperatureMeasureUnit</a>    ();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<a class="code" href="Driver__TMP102_8h.html#a78f060766a008c9e88c6231d1b149b89">tmp102opsResult_t</a>       <a class="code" href="Driver__TMP102_8h.html#a6d822c3956824ea4d16800d3e8327550">TMP102_GetTemperature</a> (<a class="code" href="Driver__TMP102_8h.html#a24a2b581a0905908186f2fb27e06be48">tmp102temperature_t</a> * temperature);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<a class="code" href="Driver__TMP102_8h.html#a78f060766a008c9e88c6231d1b149b89">tmp102opsResult_t</a>       <a class="code" href="Driver__TMP102_8h.html#a454a25314ea57496c9f31a6caef59139">TMP102_TestMeasurement</a>  (<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INC_DRIVER_TMP102_H_ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aDriver__TMP102_8h_html_a433b94d5120047d2f6a5153102fe283b"><div class="ttname"><a href="Driver__TMP102_8h.html#a433b94d5120047d2f6a5153102fe283b">tmp102configResult_t</a></div><div class="ttdeci">enum configResult tmp102configResult_t</div><div class="ttdoc">Typedef para la enumeración configResult.&amp;#160;.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00047">Driver_TMP102.h:47</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_aa45053dc1edf230bb4fa6d862e9bd25c"><div class="ttname"><a href="Driver__TMP102_8h.html#aa45053dc1edf230bb4fa6d862e9bd25c">TMP102_GetTemperatureMeasureUnit</a></div><div class="ttdeci">tmp102measureUnit_t TMP102_GetTemperatureMeasureUnit()</div><div class="ttdoc">Devuelve la unidad de medición utilizada para expresar la temperatura.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8c_source.html#l00045">Driver_TMP102.c:45</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a940b4cdd776329abd09cb148809e9571abe7c7bb2e519e494ec6fc200a9ee28c4"><div class="ttname"><a href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571abe7c7bb2e519e494ec6fc200a9ee28c4">TMP102_OPS_OK</a></div><div class="ttdeci">@ TMP102_OPS_OK</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00035">Driver_TMP102.h:35</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a27f1828aa60d6e6fa9123ad8e1884ed4ab788c882d39407e80b48d2a10786eae7"><div class="ttname"><a href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4ab788c882d39407e80b48d2a10786eae7">CELSIUS</a></div><div class="ttdeci">@ CELSIUS</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00042">Driver_TMP102.h:42</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a2b21255bd7f7192db778983b15089208"><div class="ttname"><a href="Driver__TMP102_8h.html#a2b21255bd7f7192db778983b15089208">bool_t</a></div><div class="ttdeci">bool bool_t</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00007">Driver_TMP102.h:7</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a23f61d558c56e086285b03e07f924554"><div class="ttname"><a href="Driver__TMP102_8h.html#a23f61d558c56e086285b03e07f924554">TMP102_SetTemperatureMeasureUnit</a></div><div class="ttdeci">void TMP102_SetTemperatureMeasureUnit(tmp102measureUnit_t resultMeasureUnit)</div><div class="ttdoc">Función de configuración de la unidad de medición de temperatura (FAHRENHEIT | CELSIUS)&amp;#160; Modifica la ...</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8c_source.html#l00054">Driver_TMP102.c:54</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_ad95de9eca685d58db4b69a9e1c3c8cdf"><div class="ttname"><a href="Driver__TMP102_8h.html#ad95de9eca685d58db4b69a9e1c3c8cdf">tmp102measureUnit_t</a></div><div class="ttdeci">enum measureUnit tmp102measureUnit_t</div><div class="ttdoc">Typedef para la enumeración measureUnit.&amp;#160;.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00062">Driver_TMP102.h:62</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a11e941786b472cb62698662b6d499222"><div class="ttname"><a href="Driver__TMP102_8h.html#a11e941786b472cb62698662b6d499222">tmp102transmissionPayload_t</a></div><div class="ttdeci">uint8_t tmp102transmissionPayload_t</div><div class="ttdoc">Tipo de datos utilizado para enviar/recibir el payload de una transacción I2C.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00082">Driver_TMP102.h:82</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_ac0ccc9d7901b4700e1e681284f2e4a32"><div class="ttname"><a href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32">configResult</a></div><div class="ttdeci">configResult</div><div class="ttdoc">Enumeración utilizada para reflejar el resultado de una operación de configuración del driver....</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00012">Driver_TMP102.h:12</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_ac0ccc9d7901b4700e1e681284f2e4a32aa767cbfa4104fb62237fefbb07945571"><div class="ttname"><a href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32aa767cbfa4104fb62237fefbb07945571">TMP102_CONFIG_SUCCESS</a></div><div class="ttdeci">@ TMP102_CONFIG_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00013">Driver_TMP102.h:13</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a24a2b581a0905908186f2fb27e06be48"><div class="ttname"><a href="Driver__TMP102_8h.html#a24a2b581a0905908186f2fb27e06be48">tmp102temperature_t</a></div><div class="ttdeci">float tmp102temperature_t</div><div class="ttdoc">Tipo de datos utilizado para almacenar un registro de temperatura.&amp;#160;.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00067">Driver_TMP102.h:67</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_aaec54e8828594755e8f82dfc500bef21"><div class="ttname"><a href="Driver__TMP102_8h.html#aaec54e8828594755e8f82dfc500bef21">TMP102_InitDriver</a></div><div class="ttdeci">tmp102configResult_t TMP102_InitDriver(tmp102measureUnit_t measureUnit)</div><div class="ttdoc">Función de inicialización del driver.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8c_source.html#l00026">Driver_TMP102.c:26</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_ac0ccc9d7901b4700e1e681284f2e4a32a76c45c027fb891b4efb87b41285d29ea"><div class="ttname"><a href="Driver__TMP102_8h.html#ac0ccc9d7901b4700e1e681284f2e4a32a76c45c027fb891b4efb87b41285d29ea">TMP102_CONFIG_FAIL</a></div><div class="ttdeci">@ TMP102_CONFIG_FAIL</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00014">Driver_TMP102.h:14</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a41ba9a2fd5c3694ac23a2417fe9a3d96a24024a415aba969592eb49a0f8d2361a"><div class="ttname"><a href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a24024a415aba969592eb49a0f8d2361a">TMP102_SEND_SUCCESS</a></div><div class="ttdeci">@ TMP102_SEND_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00021">Driver_TMP102.h:21</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a78f060766a008c9e88c6231d1b149b89"><div class="ttname"><a href="Driver__TMP102_8h.html#a78f060766a008c9e88c6231d1b149b89">tmp102opsResult_t</a></div><div class="ttdeci">enum operationsResult tmp102opsResult_t</div><div class="ttdoc">Typedef para la enumeración operationsResult.&amp;#160;.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00057">Driver_TMP102.h:57</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a6d822c3956824ea4d16800d3e8327550"><div class="ttname"><a href="Driver__TMP102_8h.html#a6d822c3956824ea4d16800d3e8327550">TMP102_GetTemperature</a></div><div class="ttdeci">tmp102opsResult_t TMP102_GetTemperature(tmp102temperature_t *temperature)</div><div class="ttdoc">Solicita al sensor el registro de la temperatura Esta función obtiene el valor actual de la temperatu...</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8c_source.html#l00065">Driver_TMP102.c:65</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a27f1828aa60d6e6fa9123ad8e1884ed4a8b74b891ade5ec17d65734b07cc98ca6"><div class="ttname"><a href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4a8b74b891ade5ec17d65734b07cc98ca6">FAHRENHEIT</a></div><div class="ttdeci">@ FAHRENHEIT</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00042">Driver_TMP102.h:42</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a41ba9a2fd5c3694ac23a2417fe9a3d96ac35702ed6580ebbb21951f8a4c496714"><div class="ttname"><a href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96ac35702ed6580ebbb21951f8a4c496714">TMP102_RECEIVE_BUSY</a></div><div class="ttdeci">@ TMP102_RECEIVE_BUSY</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00026">Driver_TMP102.h:26</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a27f1828aa60d6e6fa9123ad8e1884ed4"><div class="ttname"><a href="Driver__TMP102_8h.html#a27f1828aa60d6e6fa9123ad8e1884ed4">measureUnit</a></div><div class="ttdeci">measureUnit</div><div class="ttdoc">Enumeración utilizada distinguir las unidades de medición de temperatura con las que opera el driver....</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00042">Driver_TMP102.h:42</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a940b4cdd776329abd09cb148809e9571"><div class="ttname"><a href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571">operationsResult</a></div><div class="ttdeci">operationsResult</div><div class="ttdoc">Enumeración utilizada para reflejar el resultado de una transacción con el driver (ej: solicitar la t...</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00034">Driver_TMP102.h:34</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a41ba9a2fd5c3694ac23a2417fe9a3d96a56a03cad15859c3387586d4fa529f9e7"><div class="ttname"><a href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a56a03cad15859c3387586d4fa529f9e7">TMP102_RECEIVE_TIMEOUT</a></div><div class="ttdeci">@ TMP102_RECEIVE_TIMEOUT</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00028">Driver_TMP102.h:28</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a41ba9a2fd5c3694ac23a2417fe9a3d96"><div class="ttname"><a href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96">communicationResult</a></div><div class="ttdeci">communicationResult</div><div class="ttdoc">Enumeración utilizada para reflejar el resultado de una operación de configuración del driver....</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00020">Driver_TMP102.h:20</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a940b4cdd776329abd09cb148809e9571ac86574f1a80b3f1ee2b17f66334bfc8d"><div class="ttname"><a href="Driver__TMP102_8h.html#a940b4cdd776329abd09cb148809e9571ac86574f1a80b3f1ee2b17f66334bfc8d">TMP102_OPS_FAILED</a></div><div class="ttdeci">@ TMP102_OPS_FAILED</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00036">Driver_TMP102.h:36</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a41ba9a2fd5c3694ac23a2417fe9a3d96ad277a4679ee379a0506aac46534b0119"><div class="ttname"><a href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96ad277a4679ee379a0506aac46534b0119">TMP102_RECEIVE_FAILURE</a></div><div class="ttdeci">@ TMP102_RECEIVE_FAILURE</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00024">Driver_TMP102.h:24</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a048d1b6ff1382c2d33dd626e730c1195"><div class="ttname"><a href="Driver__TMP102_8h.html#a048d1b6ff1382c2d33dd626e730c1195">tmp102address_t</a></div><div class="ttdeci">uint16_t tmp102address_t</div><div class="ttdoc">Tipo de datos utilizado para almacenar la dirección del I2C slave.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00072">Driver_TMP102.h:72</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a7a2d8292ff5fc57e1685155c464c6df2"><div class="ttname"><a href="Driver__TMP102_8h.html#a7a2d8292ff5fc57e1685155c464c6df2">tmp102transmissionTimeout_t</a></div><div class="ttdeci">uint32_t tmp102transmissionTimeout_t</div><div class="ttdoc">Tipo de datos utilizado para definir timeouts en las transacciones I2C.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00077">Driver_TMP102.h:77</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_abeaddd2230fb2cf2349d4600304e3f84"><div class="ttname"><a href="Driver__TMP102_8h.html#abeaddd2230fb2cf2349d4600304e3f84">tmp102commResult_t</a></div><div class="ttdeci">enum communicationResult tmp102commResult_t</div><div class="ttdoc">Typedef para la enumeración communicationResult.&amp;#160;.</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00052">Driver_TMP102.h:52</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a454a25314ea57496c9f31a6caef59139"><div class="ttname"><a href="Driver__TMP102_8h.html#a454a25314ea57496c9f31a6caef59139">TMP102_TestMeasurement</a></div><div class="ttdeci">tmp102opsResult_t TMP102_TestMeasurement(void)</div><div class="ttdoc">Realiza una prueba de medición para verificar el estado del sensor. Intenta obtener un registro de te...</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8c_source.html#l00120">Driver_TMP102.c:120</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a41ba9a2fd5c3694ac23a2417fe9a3d96a319f61a142b008282a76615e73a5cf56"><div class="ttname"><a href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a319f61a142b008282a76615e73a5cf56">TMP102_SEND_FAILURE</a></div><div class="ttdeci">@ TMP102_SEND_FAILURE</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00022">Driver_TMP102.h:22</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a41ba9a2fd5c3694ac23a2417fe9a3d96a1882f84b85114de42618af7617865152"><div class="ttname"><a href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a1882f84b85114de42618af7617865152">TMP102_SEND_BUSY</a></div><div class="ttdeci">@ TMP102_SEND_BUSY</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00025">Driver_TMP102.h:25</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a41ba9a2fd5c3694ac23a2417fe9a3d96a7105f2e48798d292facf75aa0302f506"><div class="ttname"><a href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a7105f2e48798d292facf75aa0302f506">TMP102_RECEIVE_SUCCESS</a></div><div class="ttdeci">@ TMP102_RECEIVE_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00023">Driver_TMP102.h:23</a></div></div>
+<div class="ttc" id="aDriver__TMP102_8h_html_a41ba9a2fd5c3694ac23a2417fe9a3d96a8b2677eca9fad987bfa1a1f81b9beb79"><div class="ttname"><a href="Driver__TMP102_8h.html#a41ba9a2fd5c3694ac23a2417fe9a3d96a8b2677eca9fad987bfa1a1f81b9beb79">TMP102_SEND_TIMEOUT</a></div><div class="ttdeci">@ TMP102_SEND_TIMEOUT</div><div class="ttdef"><b>Definition:</b> <a href="Driver__TMP102_8h_source.html#l00027">Driver_TMP102.h:27</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
