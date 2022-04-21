@@ -37,3 +37,7 @@ Se incluye como documentación la presentación realizada como parte de la cáte
 Adicionalmente, se puede obtener mayor detalle de las funciones del driver en la carpeta /Docs/html (ver index.html).
 
 📖 La documentacion del proyecto fue generada automaticamente utilizando Doxygen.
+
+Ejemplo:
+========
+En la carpeta raíz del repositorio se incluye un ejemplo que demuestra el uso de las funciones del driver.
