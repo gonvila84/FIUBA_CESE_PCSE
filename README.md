@@ -2,8 +2,8 @@
 
 Alumno y cohorte:
 =================
-Alumno: Gonzalo Vila
-Cohorte: 16/2021
+- Alumno: Gonzalo Vila
+- Cohorte: 16/2021
 
 Objetivo:
 =========
