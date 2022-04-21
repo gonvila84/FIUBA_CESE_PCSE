@@ -23,3 +23,5 @@ Documentación:
 ==============
 Se incluye como documentación la presentación realizada como parte de la cátedra de Protocolos de Comunicación En Sistemas Embebidos (CESE-FIUBA).
 Adicionalmente, se puede obtener mayor detalle de las funciones del driver en la carpeta /Docs/html (ver index.html).
+
+📖 La documentacion del proyecto fue generada automaticamente utilizando Doxygen.
